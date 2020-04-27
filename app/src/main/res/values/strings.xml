@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Projeto1</string>
+    <string-array name="messages_dialog">
+        <item>Dor</item>
+        <item>Sede</item>
+        <item>Fome</item>
+        <item>Banheiro</item>
+    </string-array>
 </resources>

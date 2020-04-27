@@ -1,6 +1,7 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
         TextView textMessage = findViewById(R.id.text_message);
         Button buttonMessage = findViewById(R.id.button_message);
 
-        String[] messages = {"Tomar água", "Tomar remédio", "Ir ao banheiro"};
-        DialogMessages dialogMessages = new DialogMessages(messages, "Mensagens");
+        buttonMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        buttonMessage.setOnClickListener((view -> {
-            String content = "";
-            textMessage.setText(content);
-        }));
+                new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+
+            }
+        }) ;
 
 
 
