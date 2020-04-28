@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <RelativeLayout android:id="@+id/button_message_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button android:id="@+id/button_message"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="125dp"
+            android:text="Banheiro"
+            android:textSize="30sp"/>
+
+        <Button android:id="@+id/button_message2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="190dp"
+            android:text="Dor"
+            android:textSize="30sp"/>
+
+        <Button android:id="@+id/button_message3"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="255dp"
+            android:text="Sede"
+            android:textSize="30sp"/>
+
+        <Button android:id="@+id/button_message4"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="320dp"
+            android:text="Fome"
+            android:textSize="30sp"/>
+
+    </RelativeLayout>
 
     <TextView android:id="@+id/text_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="Message:"/>
-
-    <Button android:id="@+id/button_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Select Message"/>
+        android:gravity="center"
+        android:textColor="#F00"
+        android:layout_marginTop="50dp"
+        android:textSize="35sp"
+        android:hint="Mensagem"/>
 
 </LinearLayout>

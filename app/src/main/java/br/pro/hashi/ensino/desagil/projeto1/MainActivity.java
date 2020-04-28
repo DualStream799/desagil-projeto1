@@ -13,15 +13,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button buttonMessage1 = findViewById(R.id.button_message);
+        Button buttonMessage2 = findViewById(R.id.button_message2);
+        Button buttonMessage3 = findViewById(R.id.button_message3);
+        Button buttonMessage4 = findViewById(R.id.button_message4);
         TextView textMessage = findViewById(R.id.text_message);
-        Button buttonMessage = findViewById(R.id.button_message);
 
-        String[] messages = {"Tomar água", "Tomar remédio", "Ir ao banheiro"};
-        DialogMessages dialogMessages = new DialogMessages(messages, "Mensagens");
-
-        buttonMessage.setOnClickListener((view -> {
-            String content = "";
+        buttonMessage1.setOnClickListener((view -> {
+            String content = buttonMessage1.getText().toString();
             textMessage.setText(content);
+
+            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+        }));
+
+        buttonMessage2.setOnClickListener((view -> {
+            String content = buttonMessage2.getText().toString();
+            textMessage.setText(content);
+
+            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+        }));
+
+        buttonMessage3.setOnClickListener((view -> {
+            String content = buttonMessage3.getText().toString();
+            textMessage.setText(content);
+
+            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+        }));
+
+        buttonMessage4.setOnClickListener((view -> {
+            String content = buttonMessage4.getText().toString();
+            textMessage.setText(content);
+
+            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
 
