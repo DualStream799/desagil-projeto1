@@ -26,6 +26,8 @@ public class DialogMessages extends DialogFragment {
                 })
                 .setNegativeButton("NÃO", (dialog, id) -> {
                     // User cancelled the dialog
+                    textView.setText(null);
+                    textView.setHint("Mensagem");
                 });
         // Create the AlertDialog object and return it
         return builder.create();
