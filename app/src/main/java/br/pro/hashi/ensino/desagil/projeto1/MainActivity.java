@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textMessage = findViewById(R.id.text_message);
         Button buttonMessage = findViewById(R.id.button_message);
 
-        buttonMessage.setOnClickListener(new View.OnClickListener() {
+        textMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -26,7 +27,28 @@ public class MainActivity extends AppCompatActivity {
             }
         }) ;
 
+        buttonMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message = textMessage.getText().toString();
+                if (message.length() > 16) {
+                    showToast("Mensagem inválida!");
+                    return;
+                } else {
+                    showToast("Mensagem enviada!");
+                }
+            }
+        }) ;
 
+    }
 
+    // Método de conveniência para mostrar uma bolha de texto.
+    private void showToast(String text) {
+
+        // Constrói uma bolha de duração curta.
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+
+        // Mostra essa bolha.
+        toast.show();
     }
 }
