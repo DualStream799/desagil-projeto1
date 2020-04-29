@@ -21,30 +21,26 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMessage1.setOnClickListener((view -> {
             String content = buttonMessage1.getText().toString();
-            textMessage.setText(content);
-
-            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+            
+            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage2.setOnClickListener((view -> {
             String content = buttonMessage2.getText().toString();
-            textMessage.setText(content);
 
-            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage3.setOnClickListener((view -> {
             String content = buttonMessage3.getText().toString();
-            textMessage.setText(content);
 
-            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage4.setOnClickListener((view -> {
             String content = buttonMessage4.getText().toString();
-            textMessage.setText(content);
 
-            new DialogMessages(textMessage).show(getSupportFragmentManager(), "messagesDialog");
+            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
 

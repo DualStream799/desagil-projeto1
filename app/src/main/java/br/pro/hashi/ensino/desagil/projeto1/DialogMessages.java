@@ -12,8 +12,10 @@ import android.widget.TextView;
 public class DialogMessages extends DialogFragment {
 
     private TextView textView;
-    public DialogMessages (TextView textView) {
+    private String buttonMsg;
+    public DialogMessages (TextView textView, String msg) {
         this.textView = textView;
+        this.buttonMsg = msg;
     }
 
     @Override
@@ -23,6 +25,7 @@ public class DialogMessages extends DialogFragment {
         builder.setTitle("Tem certeza de que deseja transmitir" + " " + textView.getText().toString() + "?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton("SIM", (dialog, id) -> {
+                    textView.setText(buttonMsg);
                 })
                 .setNegativeButton("NÃO", (dialog, id) -> {
                     // User cancelled the dialog
