@@ -13,7 +13,7 @@
             android:gravity="center"
             android:textColor="#F00"
             android:textStyle="bold"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="180dp"
             android:textSize="45sp"
             android:hint="Mensagem"/>
 
@@ -21,7 +21,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="260dp"
             android:text="Banheiro"
             android:textSize="30sp"/>
 
@@ -29,7 +29,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="320dp"
             android:text="Dor"
             android:textSize="30sp"/>
 
@@ -37,7 +37,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="255dp"
+            android:layout_marginTop="380dp"
             android:text="Sede"
             android:textSize="30sp"/>
 
@@ -45,7 +45,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="440dp"
             android:text="Fome"
             android:textSize="30sp"/>
 
