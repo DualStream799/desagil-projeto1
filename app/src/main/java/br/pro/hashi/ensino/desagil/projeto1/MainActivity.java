@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    String content;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,26 +21,22 @@ public class MainActivity extends AppCompatActivity {
         TextView textMessage = findViewById(R.id.text_message);
 
         buttonMessage1.setOnClickListener((view -> {
-            String content = buttonMessage1.getText().toString();
-
+            content = "Preciso ir ao banheiro!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage2.setOnClickListener((view -> {
-            String content = buttonMessage2.getText().toString();
-
+            content = "Estou com dor!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage3.setOnClickListener((view -> {
-            String content = buttonMessage3.getText().toString();
-
+            content = "Estou com sede!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
         buttonMessage4.setOnClickListener((view -> {
-            String content = buttonMessage4.getText().toString();
-
+            content = "Estou com fome!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
