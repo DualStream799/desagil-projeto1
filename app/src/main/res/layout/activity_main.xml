@@ -10,7 +10,10 @@
         android:layout_marginHorizontal="5dp"
         android:textSize="30sp"
         android:textAlignment="center"
+        android:textColor="#F00"
+        android:textStyle="bold"
         android:text="Clique aqui para selecionar uma mensagem"/>
+
 
     <Button android:id="@+id/button_message"
         android:layout_width="match_parent"
