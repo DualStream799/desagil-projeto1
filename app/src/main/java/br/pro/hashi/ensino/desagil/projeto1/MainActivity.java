@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonMessage1.setOnClickListener((view -> {
             String content = buttonMessage1.getText().toString();
-            
+
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
