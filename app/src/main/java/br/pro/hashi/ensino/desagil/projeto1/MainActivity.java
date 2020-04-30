@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textMessage = findViewById(R.id.text_message);
 
         buttonMessage1.setOnClickListener((view -> {
-            content = "Preciso ir ao banheiro!";
+            content = "Quero ir ao banheiro!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
 
