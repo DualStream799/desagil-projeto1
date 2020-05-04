@@ -22,7 +22,7 @@ public class DialogMessages extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Tem certeza de que deseja transmitir" + " " + textView.getText().toString() + "?")
+        builder.setTitle("Tem certeza de que deseja transmitir essa mensagem?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton("SIM", (dialog, id) -> {
                     textView.setText(buttonMsg);

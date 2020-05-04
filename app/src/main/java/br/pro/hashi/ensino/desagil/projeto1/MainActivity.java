@@ -1,10 +1,13 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +61,22 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.roman_dict) {
             //TODO: exibir dicionário Romano -> Morse
             return true;
+        } else if (id == R.id.export_message) {
+            TextView textMessage = findViewById(R.id.text_message);
+            CharSequence message = textMessage.getText();
+            if (message.toString().equals("")) {
+                Toast.makeText(this,"No text to export", Toast.LENGTH_SHORT).show();
+            } else {
+                exportMessage(message);
+            }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void exportMessage(CharSequence message) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/*");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        startActivity(intent);
     }
 }
