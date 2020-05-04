@@ -1,6 +1,8 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -39,8 +41,24 @@ public class MainActivity extends AppCompatActivity {
             content = "Estou com fome!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.morse_dict) {
+            //TODO: exibir dicionário Morse -> Romano
+            return true;
+        } else if (id == R.id.roman_dict) {
+            //TODO: exibir dicionário Romano -> Morse
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
