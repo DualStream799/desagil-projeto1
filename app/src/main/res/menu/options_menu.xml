@@ -5,6 +5,4 @@
         android:title="Morse -> Romano"/>
     <item android:id="@+id/roman_dict"
         android:title="Romano -> Morse"/>
-    <item android:id="@+id/export_message"
-        android:title="Send message to..."/>
 </menu>

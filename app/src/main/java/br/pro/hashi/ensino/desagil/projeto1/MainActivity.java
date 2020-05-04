@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMessage2 = findViewById(R.id.button_message2);
         Button buttonMessage3 = findViewById(R.id.button_message3);
         Button buttonMessage4 = findViewById(R.id.button_message4);
+        Button buttonMessageSend = findViewById(R.id.export_message);
         TextView textMessage = findViewById(R.id.text_message);
 
         buttonMessage1.setOnClickListener((view -> {
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             content = "Estou com fome!";
             new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
         }));
+
+        buttonMessageSend.setOnClickListener((view -> {
+            if (textMessage.getText().toString().equals("")) {
+                Toast.makeText(this,"No text to export", Toast.LENGTH_SHORT).show();
+            } else {
+                exportMessage(textMessage.getText());
+            }
+        }));
     }
 
     @Override
@@ -61,14 +70,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.roman_dict) {
             //TODO: exibir dicionário Romano -> Morse
             return true;
-        } else if (id == R.id.export_message) {
-            TextView textMessage = findViewById(R.id.text_message);
-            CharSequence message = textMessage.getText();
-            if (message.toString().equals("")) {
-                Toast.makeText(this,"No text to export", Toast.LENGTH_SHORT).show();
-            } else {
-                exportMessage(message);
-            }
         }
         return super.onOptionsItemSelected(item);
     }
