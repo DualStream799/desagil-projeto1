@@ -1,66 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <RelativeLayout android:id="@+id/button_message_box"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/button_message_box"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView android:id="@+id/text_message"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:textColor="#F00"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:hint="@string/message_hint"/>
 
-        <TextView android:id="@+id/text_message"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/text_message"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageButton android:id="@+id/button_message"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#F00"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:textSize="40sp"
-            android:hint="Mensagem"/>
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_bathroom"
+            android:padding="0dp"
+            android:contentDescription="@string/bathroom_button_description"/>
 
-        <Button android:id="@+id/button_message"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"
-            android:text="Banheiro"
-            android:textSize="30sp"/>
-
-        <Button android:id="@+id/button_message2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="230dp"
-            android:text="Dor"
-            android:textSize="30sp"/>
-
-        <Button android:id="@+id/button_message3"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="290dp"
-            android:text="Sede"
-            android:textSize="30sp"/>
-
-        <Button android:id="@+id/button_message4"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="350dp"
-            android:text="Fome"
-            android:textSize="30sp"/>
-
-        <ImageView
-            android:id="@+id/export_message"
-            android:src="@drawable/direct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="450dp"
-            android:layout_marginBottom="40dp"
-            android:contentDescription="send_icon" />
-
-    </RelativeLayout>
+        <ImageButton android:id="@+id/button_message2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_pain"
+            android:contentDescription="TODO" />
 
 
+        <ImageButton android:id="@+id/button_message3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_water"
+            android:contentDescription="TODO"/>
 
-</LinearLayout>
+        <ImageButton android:id="@+id/button_message4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_food"
+            android:contentDescription="TODO"/>
+
+        <ImageButton
+            android:id="@+id/button_send_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_message"
+            android:contentDescription="TODO" />
+
+    </LinearLayout>
+
+</RelativeLayout>

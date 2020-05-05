@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Projeto1</string>
+    <string name="app_name">NeoMorse</string>
+    <string name="message_hint">Mensagem</string>
+    <string name="bathroom_button_description">Bathroom button</string>
 </resources>

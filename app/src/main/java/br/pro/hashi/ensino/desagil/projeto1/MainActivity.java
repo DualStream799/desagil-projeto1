@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonMessage1 = findViewById(R.id.button_message);
-        Button buttonMessage2 = findViewById(R.id.button_message2);
-        Button buttonMessage3 = findViewById(R.id.button_message3);
-        Button buttonMessage4 = findViewById(R.id.button_message4);
-        ImageView buttonMessageSend = findViewById(R.id.export_message);
+        ImageButton buttonMessage1 = findViewById(R.id.button_message);
+        ImageButton buttonMessage2 = findViewById(R.id.button_message2);
+        ImageButton buttonMessage3 = findViewById(R.id.button_message3);
+        ImageButton buttonMessage4 = findViewById(R.id.button_message4);
+        ImageView buttonMessageSend = findViewById(R.id.button_send_message);
         TextView textMessage = findViewById(R.id.text_message);
 
         buttonMessage1.setOnClickListener((view -> {
