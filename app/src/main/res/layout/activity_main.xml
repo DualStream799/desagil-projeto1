@@ -23,8 +23,9 @@
         android:weightSum="5">
 
         <ImageButton android:id="@+id/button_message"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/ic_bathroom"
             android:padding="0dp"
             android:contentDescription="@string/bathroom_button_description"/>
