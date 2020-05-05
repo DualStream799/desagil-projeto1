@@ -1,6 +1,7 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,22 +19,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     String content;
-    static final int REQUEST_SELECT_CONTACT = 1;
-
-    public void selectContact() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, REQUEST_SELECT_CONTACT);
-        }
-    }
+    CharSequence message = "";
+    static final int REQUEST_SELECT_PHONE_NUMBER = 1;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_SELECT_CONTACT && resultCode == RESULT_OK) {
+
+        if (requestCode == REQUEST_SELECT_PHONE_NUMBER && resultCode == RESULT_OK) {
+            // Get the URI and query the content provider for the phone number
             Uri contactUri = data.getData();
-            System.out.println("00000000000000000" + contactUri.getHost());
+            String[] projection = new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER};
+            Cursor cursor = getContentResolver().query(contactUri, projection,
+                    null, null, null);
+            // If the cursor returned is valid, get the phone number
+            if (cursor != null && cursor.moveToFirst()) {
+                int numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+                String number = cursor.getString(numberIndex);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null));
+                intent.putExtra("sms_body", message);
+                startActivity(intent);
+            }
         }
     }
 
@@ -75,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
             if (textMessage.getText().toString().equals("")) {
                 Toast.makeText(this,"No text to export", Toast.LENGTH_SHORT).show();
             } else {
-                // exportMessage(textMessage.getText());
                 selectContact();
+                message = textMessage.getText();
             }
         }));
     }
@@ -100,10 +106,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void exportMessage(CharSequence message) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/*");
-        intent.putExtra(Intent.EXTRA_TEXT, message);
-        startActivity(intent);
+    public void selectContact() {
+        // Start an activity for the user to pick a phone number from contacts
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, REQUEST_SELECT_PHONE_NUMBER);
+        }
     }
 }
