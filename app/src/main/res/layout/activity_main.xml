@@ -13,7 +13,7 @@
             android:gravity="center"
             android:textColor="#F00"
             android:textStyle="bold"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="50dp"
             android:textSize="40sp"
             android:hint="Mensagem"/>
 
@@ -21,7 +21,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="170dp"
             android:text="Banheiro"
             android:textSize="30sp"/>
 
@@ -29,7 +29,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="230dp"
             android:text="Dor"
             android:textSize="30sp"/>
 
@@ -37,7 +37,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="290dp"
             android:text="Sede"
             android:textSize="30sp"/>
 
@@ -45,17 +45,19 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="350dp"
             android:text="Fome"
             android:textSize="30sp"/>
 
-        <Button android:id="@+id/export_message"
-            android:layout_width="250dp"
+        <ImageView
+            android:id="@+id/export_message"
+            android:src="@drawable/direct"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="500dp"
-            android:text="Enviar"
-            android:textSize="30sp"/>
+            android:layout_marginTop="450dp"
+            android:layout_marginBottom="40dp"
+            android:contentDescription="send_icon" />
 
     </RelativeLayout>
 
