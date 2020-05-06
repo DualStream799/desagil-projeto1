@@ -4,61 +4,136 @@
     android:id="@+id/button_message_box"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    
-    <TextView android:id="@+id/text_message"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:textColor="#F00"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:hint="@string/message_hint"/>
+    android:orientation="vertical"
+    android:background="@color/neo_background_color">
 
-    <LinearLayout
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_text_message"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@+id/text_message"
-        android:orientation="horizontal"
-        android:weightSum="5">
+        android:layout_height="wrap_content"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_layer_type="hardware"
+        app:neomorph_shadow_type="inner"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="8dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
+        <TextView android:id="@+id/text_message"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:textColor="@color/neo_highlight_color"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:hint="@string/message_hint"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_button_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neo_text_message"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="inner"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
         <ImageButton android:id="@+id/button_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_bathroom"
-            android:padding="0dp"
+            android:background="@null"
             android:contentDescription="@string/bathroom_button_description"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_button_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neo_text_message"
+        android:layout_toEndOf="@+id/neo_button_5"
+        android:layout_toStartOf="@id/neo_button_1"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
         <ImageButton android:id="@+id/button_message2"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:src="@drawable/ic_pain"
-            android:contentDescription="TODO" />
+            android:background="@null"
+            android:contentDescription="TODO"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
-
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_button_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neo_button_1"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
         <ImageButton android:id="@+id/button_message3"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:src="@drawable/ic_water"
+            android:background="@null"
             android:contentDescription="TODO"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_button_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neo_button_1"
+        android:layout_toEndOf="@+id/neo_button_3"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
         <ImageButton android:id="@+id/button_message4"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:src="@drawable/ic_food"
+            android:background="@null"
             android:contentDescription="TODO"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:id="@+id/neo_button_5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/neo_text_message"
+        android:layout_alignEnd="@+id/neo_text_message"
+        app:neomorph_view_type="circular"
+        app:neomorph_layer_type="hardware"
+        android:clickable="true"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_elevation="8dp"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_background_color="@color/neo_background_color"
+        app:neomorph_shadow_color="@color/neo_shadow_color"
+        app:neomorph_highlight_color="@color/neo_highlight_color">
         <ImageButton
             android:id="@+id/button_send_message"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:src="@drawable/ic_message"
-            android:contentDescription="TODO" />
-
-    </LinearLayout>
+            android:background="@null"
+            android:contentDescription="TODO"/>
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
 </RelativeLayout>

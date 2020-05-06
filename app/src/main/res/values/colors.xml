@@ -3,4 +3,22 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!-- Current UI -->
+    <color name="neo_background_color">#191A1E</color>
+    <color name="neo_shadow_color">#000000</color>
+    <color name="neo_highlight_color">#64656B</color>
+
+    <color name="neo_icon_color">#50C9D8</color>
+
+    <!-- For Light UI -->
+    <color name="light_neo_background_color">#F1F3F6</color>
+    <color name="light_neo_shadow_color">#C2C2C7</color>
+    <color name="light_neo_highlight_color">#FFFFFF</color>
+
+    <!-- For Dark UI -->
+    <color name="dark_neo_background_color">#191A1E</color>
+    <color name="dark_neo_shadow_color">#000000</color>
+    <color name="dark_neo_highlight_color">#64656B</color>
+
 </resources>
