@@ -2,4 +2,8 @@
     <string name="app_name">NeoMorse</string>
     <string name="message_hint">Mensagem</string>
     <string name="bathroom_button_description">Bathroom button</string>
+    <string name="send_message_button_description">Send Message button</string>
+    <string name="food_button_description">Food button</string>
+    <string name="water_button_description">Water button</string>
+    <string name="pain_button_description">Pain button</string>
 </resources>
