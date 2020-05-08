@@ -7,10 +7,14 @@
     android:orientation="vertical"
     android:background="@color/neo_background_color">
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
     <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
         android:id="@+id/neo_text_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         app:neomorph_view_type="rectangular"
         app:neomorph_layer_type="hardware"
         app:neomorph_shadow_type="inner"
@@ -40,22 +44,23 @@
         android:baselineAligned="false">
 
         <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:neomorph_view_type="circular"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_elevation="4dp"
-        app:neomorph_corner_radius="16dp"
-        app:neomorph_background_color="@color/neo_background_color"
-        app:neomorph_shadow_color="@color/neo_shadow_color"
-        app:neomorph_highlight_color="@color/neo_highlight_color">
-        <ImageButton android:id="@+id/button_message3"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_water"
-            android:background="@null"
-            android:contentDescription="@string/water_button_description"/>
+            android:layout_weight="1"
+            app:neomorph_view_type="circular"
+            app:neomorph_layer_type="software"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="16dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <ImageButton android:id="@+id/button_message3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_water"
+                android:background="@null"
+                android:contentDescription="@string/water_button_description"/>
     </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
         <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
@@ -63,6 +68,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:neomorph_view_type="circular"
+            app:neomorph_layer_type="software"
             app:neomorph_shadow_type="outer"
             app:neomorph_elevation="4dp"
             app:neomorph_corner_radius="0dp"
