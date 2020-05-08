@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Projeto1</string>
+    <string name="app_name">NeoMorse</string>
+    <string name="message_hint">Mensagem</string>
+    <string name="bathroom_button_description">Bathroom button</string>
+    <string name="send_message_button_description">Send Message button</string>
+    <string name="food_button_description">Food button</string>
+    <string name="water_button_description">Water button</string>
+    <string name="pain_button_description">Pain button</string>
+    <string name="texting_toolbar_description">Texting toolbar</string>
+    <string name="settings_toolbar_description">Settings toolbar</string>
+    <string name="dictionary_toolbar_description">Dictionary toolbar</string>
 </resources>
