@@ -5,6 +5,7 @@
 
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -42,6 +43,43 @@ public class Translator {
     // Você deve mudar o recheio deste método,
     // de acordo com os requisitos do projeto.
     public LinkedList<String> getCodes() {
-        return new LinkedList<>();
+        LinkedList MorseList =  new LinkedList<String>(Arrays.asList(
+        ".",
+        "-",
+        "..",
+        ".-",
+        "-.",
+        "--",
+        "...",
+        "..-",
+        ".-.",
+        ".--",
+        "-..",
+        "-.-",
+        "--.",
+        "---",
+        "....",
+        "...-",
+        "..-.",
+        ".-..",
+        ".--.",
+        ".---",
+        "-...",
+        "-..-",
+        "-.-.",
+        "-.--",
+        "--..",
+        "--.-",
+        ".....",
+        "....-",
+        "...--",
+        "..---",
+        ".----",
+        "-....",
+        "--...",
+        "---..",
+        "----.",
+        "-----"));
+        return MorseList;
     }
 }
