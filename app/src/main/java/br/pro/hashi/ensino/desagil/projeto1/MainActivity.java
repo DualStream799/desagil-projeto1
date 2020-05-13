@@ -73,22 +73,22 @@ public class MainActivity extends AppCompatActivity {
         // Actions for each one of the buttons:
         buttonMessage1.setOnClickListener((view -> {
             content = "Quero ir ao banheiro!";
-            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
+            textMessage.setText(content);
         }));
 
         buttonMessage2.setOnClickListener((view -> {
             content = "Estou com dor!";
-            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
+            textMessage.setText(content);
         }));
 
         buttonMessage3.setOnClickListener((view -> {
             content = "Estou com sede!";
-            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
+            textMessage.setText(content);
         }));
 
         buttonMessage4.setOnClickListener((view -> {
             content = "Estou com fome!";
-            new DialogMessages(textMessage, content).show(getSupportFragmentManager(), "messagesDialog");
+            textMessage.setText(content);
         }));
 
         buttonMessageSend.setOnClickListener((view -> {
