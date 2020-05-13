@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton buttonToolbar3 = findViewById(R.id.button_toolbar_3);
         ImageButton buttonDot = findViewById(R.id.button_dot);
         ImageButton buttonDash = findViewById(R.id.button_dash);
-        ImageButton buttonMorse = findViewById(R.id.button_morse);
         ImageButton buttonErase = findViewById(R.id.button_erase);
         ImageButton buttonAddChar = findViewById(R.id.button_add);
 
