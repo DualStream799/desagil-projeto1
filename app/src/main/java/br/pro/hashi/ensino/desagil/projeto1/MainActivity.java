@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     String content;
     CharSequence message = "";
     static final int REQUEST_SELECT_PHONE_NUMBER = 1;
+    StringBuilder morseCode;
+    StringBuilder translatedMessage;
+    Translator translator;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -62,11 +65,23 @@ public class MainActivity extends AppCompatActivity {
         ImageButton buttonToolbar1 = findViewById(R.id.button_toolbar_1);
         ImageButton buttonToolbar2 = findViewById(R.id.button_toolbar_2);
         ImageButton buttonToolbar3 = findViewById(R.id.button_toolbar_3);
+        ImageButton buttonDot = findViewById(R.id.button_dot);
+        ImageButton buttonDash = findViewById(R.id.button_dash);
+        ImageButton buttonMorse = findViewById(R.id.button_morse);
+        ImageButton buttonErase = findViewById(R.id.button_erase);
+        ImageButton buttonAddChar = findViewById(R.id.button_add);
+
         com.chinodev.androidneomorphframelayout.NeomorphFrameLayout neoToolbar1 = findViewById(R.id.neo_toolbar_tab_1);
         com.chinodev.androidneomorphframelayout.NeomorphFrameLayout neoToolbar2 = findViewById(R.id.neo_toolbar_tab_2);
         com.chinodev.androidneomorphframelayout.NeomorphFrameLayout neoToolbar3 = findViewById(R.id.neo_toolbar_tab_3);
 
         TextView textMessage = findViewById(R.id.text_message);
+        TextView textMorse = findViewById(R.id.text_morse);
+        TextView textTranslated = findViewById(R.id.text_translated);
+
+        morseCode = new StringBuilder();
+        translatedMessage = new StringBuilder();
+        translator = new Translator();
 
         neoToolbar1.switchShadowType();
         neoToolbar3.switchShadowType();
@@ -99,6 +114,63 @@ public class MainActivity extends AppCompatActivity {
                 message = textMessage.getText();
             }
         }));
+        // Add a dot:
+        buttonDot.setOnClickListener((view -> {
+            morseCode.append('.');
+            textMorse.setText(morseCode);
+            try {
+                char translatedChar = translator.morseToChar(morseCode.toString());
+                if (translatedChar != '|' && translatedChar != ' ') {
+                    textTranslated.setText(Character.toString(translatedChar));
+                } else {
+                    Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+                }
+            } catch (NullPointerException npe) {
+                Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+            }
+
+        }));
+        // Add a dash:
+        buttonDash.setOnClickListener((view -> {
+            morseCode.append('-');
+            textMorse.setText(morseCode);
+            try {
+                char translatedChar = translator.morseToChar(morseCode.toString());
+                if (translatedChar != '|' && translatedChar != ' ') {
+                    textTranslated.setText(Character.toString(translatedChar));
+                } else {
+                    Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+                }
+            } catch (NullPointerException npe) {
+                Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+            }
+        }));
+        // Remove the last signal:
+        buttonErase.setOnClickListener((view -> {
+            if (morseCode.length() != 0) {
+                morseCode.setLength(morseCode.length() - 1);
+                textMorse.setText(morseCode);
+            }
+            try {
+                char translatedChar = translator.morseToChar(morseCode.toString());
+                if (translatedChar != '|' && translatedChar != ' ') {
+                    textTranslated.setText(Character.toString(translatedChar));
+                } else {
+                    Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+                }
+            } catch (NullPointerException npe) {
+                Toast.makeText(this,"Invalid morse code", Toast.LENGTH_SHORT).show();
+            }
+        }));
+        /// Add the translated char to the message:
+        buttonAddChar.setOnClickListener((view -> {
+            translatedMessage.append(textTranslated.getText());
+            textMessage.setText(translatedMessage);
+            morseCode.setLength(0);
+            textMorse.setText(morseCode);
+            textTranslated.setText("");
+        }));
+
 
         buttonToolbar1.setOnClickListener((view -> {
             neoToolbar1.setShadowInner();

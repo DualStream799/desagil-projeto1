@@ -9,4 +9,6 @@
     <string name="texting_toolbar_description">Texting toolbar</string>
     <string name="settings_toolbar_description">Settings toolbar</string>
     <string name="dictionary_toolbar_description">Dictionary toolbar</string>
+    <string name="morse_hint">Morse Code</string>
+    <string name="translated_hint">Char</string>
 </resources>

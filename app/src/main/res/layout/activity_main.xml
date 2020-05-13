@@ -25,7 +25,7 @@
         app:neomorph_highlight_color="@color/neo_highlight_color">
         <TextView android:id="@+id/text_message"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="225dp"
             android:gravity="center"
             android:textColor="@color/light_neo_background_color"
             android:textStyle="bold"
@@ -35,9 +35,10 @@
             android:textColorHint="@color/neo_highlight_color"/>
     </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
-    <LinearLayout
+    <LinearLayout android:id="@+id/centered_buttons"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:gravity="center"
         android:layout_below="@id/neo_text_message"
         android:weightSum="5.5"
         android:layout_centerVertical="true"
@@ -158,4 +159,192 @@
         </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
     </LinearLayout>
+
+    <LinearLayout android:id="@+id/morse_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centered_buttons"
+        android:weightSum="5"
+        android:layout_centerVertical="true"
+        android:baselineAligned="false"
+        android:layout_marginBottom="25dp">
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/neo_text_morse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_layer_type="hardware"
+            app:neomorph_shadow_type="inner"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="8dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <TextView android:id="@+id/text_morse"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:textColor="@color/light_neo_background_color"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-thin"
+                android:hint="@string/morse_hint"
+                android:textColorHint="@color/neo_highlight_color"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:id="@+id/neo_text_translated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:neomorph_view_type="rectangular"
+            app:neomorph_layer_type="hardware"
+            app:neomorph_shadow_type="inner"
+            app:neomorph_elevation="6dp"
+            app:neomorph_corner_radius="8dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <TextView android:id="@+id/text_translated"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:textColor="@color/light_neo_background_color"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-thin"
+                android:hint="@string/translated_hint"
+                android:textColorHint="@color/neo_highlight_color"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout android:id="@+id/morse_input"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/morse_output"
+        android:gravity="center"
+        android:weightSum="5.5"
+        android:layout_centerVertical="true"
+        android:baselineAligned="false"
+        android:layout_marginBottom="25dp">
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:neomorph_view_type="circular"
+            app:neomorph_layer_type="software"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="0dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <ImageButton android:id="@+id/button_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_add"
+                android:background="@null"
+                android:contentDescription="@string/food_button_description"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:neomorph_view_type="circular"
+            app:neomorph_layer_type="software"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="0dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <ImageButton android:id="@+id/button_dot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_dot"
+                android:background="@null"
+                android:contentDescription="@string/food_button_description"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:padding="0dp"
+            app:neomorph_view_type="circular"
+            app:neomorph_layer_type="software"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="0dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                app:neomorph_view_type="circular"
+                app:neomorph_layer_type="software"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_elevation="4dp"
+                app:neomorph_corner_radius="0dp"
+                app:neomorph_background_color="@color/neo_icon_color"
+                app:neomorph_shadow_color="@color/neo_shadow_color"
+                app:neomorph_highlight_color="@color/neo_highlight_color">
+                <ImageButton
+                    android:id="@+id/button_morse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:contentDescription="@string/send_message_button_description"/>
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:neomorph_view_type="circular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="16dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <ImageButton android:id="@+id/button_dash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_dash"
+                android:background="@null"
+                android:contentDescription="@string/pain_button_description"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+        <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:neomorph_view_type="circular"
+            app:neomorph_shadow_type="outer"
+            app:neomorph_elevation="4dp"
+            app:neomorph_corner_radius="16dp"
+            app:neomorph_background_color="@color/neo_background_color"
+            app:neomorph_shadow_color="@color/neo_shadow_color"
+            app:neomorph_highlight_color="@color/neo_highlight_color">
+            <ImageButton android:id="@+id/button_erase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_eraser"
+                android:background="@null"
+                android:contentDescription="@string/pain_button_description"/>
+        </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+    </LinearLayout>
+
 </RelativeLayout>
