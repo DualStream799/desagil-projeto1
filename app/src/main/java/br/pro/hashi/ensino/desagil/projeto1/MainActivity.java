@@ -6,11 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +15,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    String content;
-    CharSequence message = "";
     static final int REQUEST_SELECT_PHONE_NUMBER = 1;
-    StringBuilder morseCode;
-    StringBuilder translatedMessage;
-    Translator translator;
+    private CharSequence message = "";
+    private StringBuilder morseCode;
+    private StringBuilder translatedMessage;
+    private String content;
+    private Translator translator;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
